@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbqfrvcvfa5hf"]
+
+[ext_resource type="Script" path="res://scenes/cars/cars.gd" id="1_ti5br"]
+
+[node name="cars" type="Node2D"]
+script = ExtResource("1_ti5br")

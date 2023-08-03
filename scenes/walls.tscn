@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://twv3dr0134m8"]
+
+[ext_resource type="PackedScene" uid="uid://c8fm5pl0h3e01" path="res://scenes/wall.tscn" id="1_v54f0"]
+
+[node name="walls" type="Node2D"]
+
+[node name="WallTop" parent="." instance=ExtResource("1_v54f0")]
+
+[node name="WallBottom" parent="." instance=ExtResource("1_v54f0")]
+position = Vector2(0, 648)
+
+[node name="WallLeft" parent="." instance=ExtResource("1_v54f0")]
+rotation = 1.5708
+
+[node name="WallRight" parent="." instance=ExtResource("1_v54f0")]
+position = Vector2(1152, 0)
+rotation = 1.5708

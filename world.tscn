@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkfqwil5mb0o4"]
+
+[ext_resource type="PackedScene" uid="uid://cy2lfkcmxf6mn" path="res://scenes/player/player1.tscn" id="1_wtbyr"]
+[ext_resource type="PackedScene" uid="uid://twv3dr0134m8" path="res://scenes/walls.tscn" id="2_7sh1g"]
+[ext_resource type="PackedScene" uid="uid://dbqfrvcvfa5hf" path="res://scenes/cars/cars.tscn" id="3_ilm16"]
+
+[node name="World" type="Node2D"]
+
+[node name="walls" parent="." instance=ExtResource("2_7sh1g")]
+
+[node name="Player1" parent="." instance=ExtResource("1_wtbyr")]
+position = Vector2(515, 269)
+
+[node name="cars" parent="." instance=ExtResource("3_ilm16")]
