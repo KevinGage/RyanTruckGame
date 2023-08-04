@@ -8,7 +8,7 @@
 
 [node name="walls" parent="." instance=ExtResource("2_7sh1g")]
 
+[node name="cars" parent="." instance=ExtResource("3_ilm16")]
+
 [node name="Player1" parent="." instance=ExtResource("1_wtbyr")]
 position = Vector2(515, 269)
-
-[node name="cars" parent="." instance=ExtResource("3_ilm16")]

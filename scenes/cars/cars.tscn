@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbqfrvcvfa5hf"]
+[gd_scene load_steps=3 format=3 uid="uid://dbqfrvcvfa5hf"]
 
 [ext_resource type="Script" path="res://scenes/cars/cars.gd" id="1_ti5br"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuv55"]
+size = Vector2(130, 128)
+
 [node name="cars" type="Node2D"]
 script = ExtResource("1_ti5br")
+
+[node name="SpawnChecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnChecker"]
+shape = SubResource("RectangleShape2D_yuv55")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
