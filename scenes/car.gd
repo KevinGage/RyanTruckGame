@@ -10,8 +10,8 @@ func _on_body_entered(_body):
 
 
 func _on_timer_timeout():
-	car_timer_timeout.emit()
-	#$"..".spawn_car()
-	
-	print("despawn!")
-	queue_free()
+	# When timer runs out emit a signal with this instances information
+	car_timer_timeout.emit(self)
+
+func get_shape() -> Shape2D:
+	return $CollisionShape2D.shape
