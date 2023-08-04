@@ -1,5 +1,6 @@
 extends Node2D
 var car_scene = preload("res://scenes/cars/car.tscn")
+var crushed_car_scene = preload("res://scenes/cars/crushed_car.tscn")
 
 const num_of_cars = 3
 
@@ -33,7 +34,7 @@ func spawn_car():
 	var car = car_scene.instantiate()
 
 	# connect car signal to function
-	car.connect("car_timer_timeout", _on_car_timer_timeout)
+	car.connect("car_crushed", _on_car_crushed)
 	
 	# set car possition to spawner position
 	car.position = $SpawnChecker.position
@@ -46,13 +47,18 @@ func spawn_car():
 	ready_to_spawn = false
 	$Timer.start()
 
-func _on_car_timer_timeout(car):
+func _on_car_crushed(car):
 	# This will fire when a car instance sends the car_timer_timeout signal. 
 	# remove the car from the collection
 	spawned_cars.erase(car)
+	
+	# add a crushed car to replace the car
+	var crushed_car = crushed_car_scene.instantiate() as Area2D
+	crushed_car.position = car.position
+	add_child(crushed_car)
+	
 	# delete the car
 	car.queue_free()
-
 
 func _on_timer_timeout():
 	ready_to_spawn = true
