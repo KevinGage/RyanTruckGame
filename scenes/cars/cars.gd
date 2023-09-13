@@ -55,7 +55,7 @@ func _on_car_crushed(car):
 	# add a crushed car to replace the car
 	var crushed_car = crushed_car_scene.instantiate() as Area2D
 	crushed_car.position = car.position
-	add_child(crushed_car)
+	call_deferred("add_child", crushed_car)
 	
 	# delete the car
 	car.queue_free()
